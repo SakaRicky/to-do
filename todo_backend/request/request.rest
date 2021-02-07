@@ -1,0 +1,54 @@
+GET http://localhost:3001/api/todos 
+
+###
+GET http://localhost:3001/api/todos/601837a7bb625a2e301508d4
+
+###
+POST http://localhost:3001/api/todos
+content-type: application/json
+
+{
+    "todo": "Start a Tutorial on bootstrap",
+    "important": true,
+    "done": false
+}
+
+###
+POST http://localhost:3001/api/todos
+content-type: application/json
+
+{
+    "todo": "Buy Milk",
+    "important": true,
+    "done": false
+}
+
+###
+POST http://localhost:3001/api/todos
+content-type: application/json
+
+{
+    "todo": "Cook rice",
+    "important": true,
+    "done": false
+}
+
+###
+PUT http://localhost:3001/api/todos/601837a7bb625a2e301508d4
+content-type: application/json
+
+{
+    "todo": "Buy Milk and Sugar",
+    "important": true,
+    "done": false
+}
+
+###
+DELETE  http://localhost:3001/api/todos/601837a7bb625a2e301508d4
+content-type: application/json
+
+{
+    "todo": "Buy Milk and Sugar",
+    "important": true,
+    "done": false
+}
