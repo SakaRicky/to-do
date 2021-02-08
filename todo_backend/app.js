@@ -9,6 +9,7 @@ const middleware = require('./utils/middleware')
 const app = express()
 
 logger.info('connecting to', config.MONGO_URI)
+console.log('mongo_url', config.MONGO_URI);
 
 const mongodbUrl = config.MONGO_URI
 

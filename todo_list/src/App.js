@@ -1,17 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import todoServices from './services/todo_services'
 
-import Todo from './Todo';
+import Todo from './components/Todo/Todo';
 
 const TodoList = () => {
     const [todos, setTodos] = useState([])
+    const [todo, setTodo] = useState('')
+    const [todoText, setTodoText] = useState('')
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/todos')
+        todoServices.getTodos()
              .then(response => {
                 setTodos(response.data)
              })
     }, [])
+
+    const todoTextHandler = (event) => {
+        setTodoText(event.target.value);
+    }
+
+    const addTodoHandler = (event) => {
+        event.preventDefault()
+        const todo = {
+            todo: todoText,
+            important: false,
+            done: false
+        }
+        todoServices.createTodo(todo)
+                    .then(createdTodo => {
+                        setTodos(todos.concat(createdTodo))
+                        setTodoText("")
+                    })
+    }
 
     return (
         <div>
@@ -25,8 +45,8 @@ const TodoList = () => {
                     })}
                 </ul>
                 <div className="container-fluid pb-3">
-                    <form>
-                        <input placeholder="enter task"></input>
+                    <form onSubmit={addTodoHandler}>
+                        <input placeholder="enter task" onChange={todoTextHandler} value={todoText}></input>
                         <button type="submit" className="btn btn-primary">add</button>
                     </form>
                 </div>

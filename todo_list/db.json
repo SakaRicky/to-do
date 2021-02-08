@@ -1,0 +1,52 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "Code a todo-app by myself from scratch",
+      "important": true,
+      "done": true
+    },
+    {
+      "id": 2,
+      "todo": "Go to GBHS",
+      "important": true,
+      "done": true
+    },
+    {
+      "id": 3,
+      "todo": "Watch CHAN Football",
+      "important": false,
+      "done": true
+    },
+    {
+      "todo": "Eat",
+      "important": false,
+      "done": true,
+      "id": 4
+    },
+    {
+      "todo": "Kiss my wife",
+      "important": false,
+      "done": false,
+      "id": 5
+    },
+    {
+      "todo": "Celebrate",
+      "important": false,
+      "done": false,
+      "id": 6
+    },
+    {
+      "todo": "ABCD",
+      "important": false,
+      "done": false,
+      "id": 7
+    },
+    {
+      "todo": "EFGHI",
+      "important": false,
+      "done": true,
+      "id": 8
+    }
+  ]
+}
